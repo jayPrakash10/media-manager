@@ -1,0 +1,29 @@
+.navbar {
+    transition: color,background-color 1s linear;
+}
+
+.theme_switch {
+    width: 50px;
+    height: 25px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 2px;
+
+    .switch {
+        height: 100%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        transition: all 0.5s linear;
+    }
+
+    .switch.light {
+        left: 0;
+        right: calc(100% - 19.9px);
+    }
+
+    .switch.dark {
+        left: calc(100% - 19.9px);
+        right: 0;
+    }
+}

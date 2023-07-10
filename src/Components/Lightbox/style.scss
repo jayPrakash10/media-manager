@@ -1,0 +1,14 @@
+.modal {
+    background-color: #000000bc;
+}
+
+.lightbox_modal {
+    box-sizing: content-box;
+    
+    .lightbox_media_container {
+        .lightbox_media {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
