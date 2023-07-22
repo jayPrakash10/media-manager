@@ -11,4 +11,10 @@
             max-height: 100%;
         }
     }
+
+    @media (max-width: 576px) {
+        .lightbox_previous, .lightbox_next {
+            font-size: 20px;
+        }
+    }
 }

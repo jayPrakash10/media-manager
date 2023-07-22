@@ -1,13 +1,17 @@
 import { mediaList } from "../../Data/media";
 import Carousel from "react-grid-carousel";
 import Lightbox from "../Lightbox";
+import { useState } from "react";
 
 const GridCarousel = () => {
+  const [openLightbox, setOpenLightbox] = useState(false);
+  const [lightboxMedia, setLightboxMedia] = useState(0);
+
   return (
     <>
     <div className="row pt-4">
       <div className="col-12 text-center">
-        <p className="fs-2">Media Grid Carousel</p>
+        <p className="fs-2">Media Grid Carousel with LightBox</p>
       </div>
       <div className="grid_carousel_container">
         <Carousel
@@ -31,9 +35,12 @@ const GridCarousel = () => {
           ]}
           mobileBreakpoint={450}
         >
-          {mediaList.map((media) =>
-            <Carousel.Item>
-              <div className={`media_container d-flex align-items-center justify-content-center`}> {/* ${isSorting ? "wobble" : ""} */}
+          {mediaList.map((media, index) =>
+            <Carousel.Item key={index}>
+              <div
+                className={`media_container d-flex align-items-center justify-content-center`}
+                onClick={() => { setLightboxMedia(index); setOpenLightbox(true); }}
+              >
                 {media.type === "photo" ?
                   <img src={media.url} alt="_image" className="media" draggable={false} />
                   :
@@ -50,7 +57,7 @@ const GridCarousel = () => {
         </Carousel>
       </div>
     </div>
-    <Lightbox isOpen={false} media={mediaList}/>
+    <Lightbox index={lightboxMedia} isOpen={openLightbox} media={mediaList} onCloseLightbox={() => setOpenLightbox(false)}/>
     </>
   )
 }
