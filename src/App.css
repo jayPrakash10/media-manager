@@ -16,6 +16,14 @@
   user-select: none;
 }
 
+.show_cursor {
+  cursor: auto;
+}
+
+.hide_cursor {
+  cursor: none;
+}
+
 @keyframes wobble {
   0% {
     transform: rotateZ(0deg);

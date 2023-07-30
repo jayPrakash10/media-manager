@@ -10,8 +10,11 @@ const VideoPlayer = ({
         height: 0,
         width: 0,
     });
+    const [mouseMoveStopped, setMouseMoveStopped] = useState();
 
     const videoRef = useRef();
+
+    let moveDetect;
 
     useEffect(() => {
         setIsPlaying(false);
@@ -40,7 +43,28 @@ const VideoPlayer = ({
         videoRef.current.play();
     }
 
+    const onMouseMove = () => {
+        if(isPlaying) {
+            clearInterval(moveDetect);
+            document.getElementById("video_pause_container")?.blur();
+            document.getElementById("video_pause_btn")?.classList.remove("hide_btn");
+            document.getElementById("video_pause_btn")?.classList.add("show_btn");
+            document.getElementById("video_pause_container")?.classList.remove("hide_cursor");
+            document.getElementById("video_pause_container")?.classList.add("show_cursor");
+
+            moveDetect = setTimeout(() => {
+                document.getElementById("video_pause_container")?.focus();
+                document.getElementById("video_pause_btn")?.classList.remove("show_btn");
+                document.getElementById("video_pause_btn")?.classList.add("hide_btn");
+                document.getElementById("video_pause_container")?.classList.remove("show_cursor");
+                document.getElementById("video_pause_container")?.classList.add("hide_cursor");
+                console.log("mouseStoped");
+            }, 2000)
+        }
+    }
+
     const onpause = () => {
+        console.log("stop");
         setIsPlaying(false);
     }
 
@@ -64,10 +88,11 @@ const VideoPlayer = ({
             {isPlaying ?
                 <div
                     id="video_pause_container"
-                    className="position-absolute d-flex align-items-center justify-content-center control_container"
+                    className="position-absolute show_cursor d-flex align-items-center justify-content-center control_container"
                     style={containerDimension}
+                    onMouseMove={() => onMouseMove()}
                 >
-                    <div id="video_pause_btn" className="fs-1 video_pause_btn" onClick={pause}>
+                    <div id="video_pause_btn" className="fs-1 hide_btn" onClick={pause}>
                         <i role="button" className="bi bi-pause-circle-fill"></i>
                     </div>
                 </div>
