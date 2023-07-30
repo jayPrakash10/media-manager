@@ -10,7 +10,6 @@ const VideoPlayer = ({
         height: 0,
         width: 0,
     });
-    const [mouseMoveStopped, setMouseMoveStopped] = useState();
 
     const videoRef = useRef();
 
@@ -26,14 +25,6 @@ const VideoPlayer = ({
             width: videoRef.current.clientWidth,
         });
     }, [videoRef?.current?.src]);
-
-    const hidePauseBtn = () => {
-        document.getElementById("video_pause_container")?.focus();
-    }
-
-    const showPauseBtn = () => {
-        document.getElementById("video_pause_container")?.focus();
-    }
 
     const pause = () => {
         videoRef.current.pause();
@@ -70,9 +61,6 @@ const VideoPlayer = ({
 
     const onplay = () => {
         setIsPlaying(true);
-        setTimeout(() => {
-            hidePauseBtn();
-        }, 2000)
     }
 
     const onLoad = (element) => {
