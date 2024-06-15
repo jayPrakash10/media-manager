@@ -47,7 +47,7 @@ const GridCarousel = () => {
                   <>
                     <video src={media.url} className="media" draggable={false} />
                     <div className="position-absolute fs-3 text-light media_overlay">
-                      <i className="bi bi-play-circle-fill d-flex justify-content-center align-items-center"></i>
+                      <i className="bi bi-play-circle-fill text-dark-emphasis d-flex justify-content-center align-items-center"></i>
                     </div>
                   </>
                 }
