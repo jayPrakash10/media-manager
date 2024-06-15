@@ -4,12 +4,20 @@ export const mediaList = [
         type: "photo",
     },
     {
+        url: "https://videos.pexels.com/video-files/5532765/5532765-hd_1080_2048_25fps.mp4",
+        type: "video",
+    },
+    {
         url: "https://assets.slice.ca/wp-content/uploads/2020/01/cutest-dog-names-2020.jpg",
         type: "photo",
     },
     {
         url: "https://topdogtips.com/wp-content/uploads/2014/12/Top-10-Cute-Dog-Breeds-Who-Wins-1.jpg",
         type: "photo",
+    },
+    {
+        url: "https://videos.pexels.com/video-files/3209828/3209828-hd_1280_720_25fps.mp4",
+        type: "video",
     },
     {
         url: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFNTv7ogK6omzBeZSWZOVJ7ZDqYi51MdJq6g&usqp=CAU",
@@ -27,16 +35,4 @@ export const mediaList = [
         url: "https://img.huffingtonpost.com/asset/5ab4d4ac2000007d06eb2c56.jpeg?cache=sih0jwle4e&ops=282_200",
         type: "photo",
     },
-    {
-        url: "https://player.vimeo.com/external/465044765.hd.mp4?s=47de88c0c0fbede694ead4f4f1afa0119c571fe0&profile_id=174&oauth2_token_id=57447761",
-        type: "video",
-    },
-    {
-        url: "https://player.vimeo.com/external/465045589.sd.mp4?s=1eec28c78290e7d8a4def914c779d959bd62d6cb&profile_id=164&oauth2_token_id=57447761",
-        type: "video",
-    },
-    {
-        url: "https://betabookmotto.s3.amazonaws.com/public/images/3f63a514-0e5f-4ded-bca2-a201f52ff4ec.jpg",
-        type: "photo",
-    }
 ]
